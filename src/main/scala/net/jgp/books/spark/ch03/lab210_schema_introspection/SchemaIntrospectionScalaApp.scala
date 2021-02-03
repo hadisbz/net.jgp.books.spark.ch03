@@ -19,8 +19,10 @@ object SchemaIntrospectionScalaApp {
     // Similar to IngestionSchemaManipulationApp (no output)
     ////////////////////////////////////////////////////////////////////
     // Creates a session on a local master
-    val spark = SparkSession.builder.appName("Schema introspection for restaurants in Wake County, NC")
-      .master("local").getOrCreate
+    val spark = SparkSession.builder
+              .appName("Schema introspection for restaurants in Wake County, NC")
+              .master("local")
+              .getOrCreate
 
     // Reads a CSV file with header, called books.csv, stores it in a
     // dataframe

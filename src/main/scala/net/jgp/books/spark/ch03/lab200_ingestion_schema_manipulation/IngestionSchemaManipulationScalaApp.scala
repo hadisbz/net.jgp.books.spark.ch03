@@ -63,7 +63,7 @@ object IngestionSchemaManipulationScalaApp {
     val drop_cols=List("address2","zip","tel","dateStart",
                   "geoX","geoY","address1","datasetId")
     val dfUsedForBook = df.drop(drop_cols:_*)
-    dfUsedForBook.show(5, 15)
+    dfUsedForBook.show(5, 30)
     // end
 
     df.printSchema()
