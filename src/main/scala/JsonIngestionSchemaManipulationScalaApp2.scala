@@ -38,10 +38,7 @@ object JsonIngestionSchemaManipulationScalaApp2 {
     df = df.withColumn("id", concat(cols_list:_*))
     
     df.show(2,50)
-    df.printSchema()
-    
-
-        
+    df.printSchema()        
            
   }
 }
