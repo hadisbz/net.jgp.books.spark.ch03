@@ -1,6 +1,7 @@
 package net.jgp.books.spark.ch03.lab300_dataset
 
 import java.util.{Arrays, List}
+
 import org.apache.spark.sql.{Dataset, Encoders, SparkSession}
 
 /**
@@ -20,13 +21,16 @@ object ArrayToDatasetScalaApp {
     val spark: SparkSession = SparkSession.builder.appName("Array to Dataset<String>")
                 .master("local").getOrCreate
 
-    val stringList: Array[String] = Array[String]("Jean", "Liz", "Pierre", "Lauric")
-    val data:List[String] = Arrays.asList(stringList:_*)
+    val stringList = Array("Jean", "Liz", "Pierre", "Lauric")
+    
+    val data = Arrays.asList(stringList:_*)
+    
     /**
       * data:    parameter list1, data to create a dataset
       * encoder: parameter list2, implicit encoder
       */
-    val ds: Dataset[String] = spark.createDataset(data)(Encoders.STRING)
+    
+    val ds = spark.createDataset(data)(Encoders.STRING)
 
     ds.show()
     ds.printSchema()
